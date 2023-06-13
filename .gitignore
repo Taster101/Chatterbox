@@ -129,7 +129,8 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+.DS_Store
 node_modules
 .vscode
-.DS_Store
+.env
 package-lock.json
