@@ -11,23 +11,19 @@ const userSchema = new Schema(
     password: {
       type: String,
       unique: true,
-     // match: 
-      
-      
+      // match: 
 
     },
     age: {
-     type: Number,
+      type: Number,
     },
 
     memory: [{
-        type: Schema.Types.ObjectId,
-        ref: `memory`,
+      type: Schema.Types.ObjectId,
+      ref: `memory`,
     }],
-   
-    },
-    
-   
+
+  },
   {
     toJSON: {
       virtuals: true,

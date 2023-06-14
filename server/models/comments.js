@@ -20,13 +20,8 @@ const commentSchema = new Schema(
         type: String,
         ref: `User`
     }
-    
 
-
-    
     },
-    
-   
   {
     toJSON: {
       virtuals: true,
