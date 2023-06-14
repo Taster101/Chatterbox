@@ -16,14 +16,19 @@ type Memory {
     age: Int
   }
 
-type Query {
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Query {
     memory: [Memory]
     user: [User]
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+    addUser(username: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
   }
 `;
 

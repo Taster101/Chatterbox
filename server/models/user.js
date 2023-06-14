@@ -9,21 +9,25 @@ const userSchema = new Schema(
       trim: true,
       Unique: true,
     },
+    
     // email: {      //added by -Ethan
     //   type: String,
     //   required: true,
     //   unique: true,
-    //   mathc: [/.+@.+\..+/, 'Must match an email address!'],
+    //   match: [/.+@.+\..+/, 'Must match an email address!'],
     // },
+
     password: {
       type: String,
       unique: true,
+      minlength: 2,
       // match: 
-      // minlength: 5,
-
+    
     },
     age: {
       type: Number,
+      maxLength: 3,
+      trim: true,
     },
 
     memory: [{
