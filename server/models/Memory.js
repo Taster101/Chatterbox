@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const  commentSchema  = require('./comments')
 
+
 const memorySchema = new Schema (
     { 
         userId: {
