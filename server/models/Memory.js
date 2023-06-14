@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const  commentSchema  = require('./comments')
+const  commentSchema  = require('./Comments')
 
 
 const memorySchema = new Schema (
@@ -36,11 +36,11 @@ const memorySchema = new Schema (
 
         },
 
-        comments: [commentSchema]
+        Comments: [commentSchema]
 
     }
 );
 
-const Memory = model('memory', memorySchema);
+const Memory = model('Memory', memorySchema);
 
 module.exports = Memory;
