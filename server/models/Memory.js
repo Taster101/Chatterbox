@@ -2,15 +2,12 @@ const { Schema, model } = require('mongoose');
 const  commentSchema  = require('./comments')
 
 const memorySchema = new Schema (
-    {
-        
-        
+    { 
         userId: {
             type: String,
 
-
         },
-        name: {
+        title: {
             type: String,
             required: true,
             trim: true
