@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const commentSchema = new Schema(
   {
-    commets: {
+    commet: {
       type: String,
       required: true,
       trim: true,
@@ -16,7 +16,7 @@ const commentSchema = new Schema(
 
 
     },
-    user: {
+    commentAuthur: {
         type: String,
         ref: `User`
     }
