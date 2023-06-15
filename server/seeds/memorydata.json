@@ -3,19 +3,19 @@
         "title": "Birthday",
         "img": "jelly23",
         "memory": "I my birthday today!",
-        "likes": "32",
+        "likes": true,
         "tag": "#Birthday"
     },
     {
         "title": "Biden awesome",
         "memory": "Biden is lower taxes!",
-        "likes": "1",
+        "likes": true,
         "tag": "#Polotics"
     },
     {
         "title": "First house",
         "memory": "i purchased my first house",
-        "likes": "233",
+        "likes": true,
         "tag": "#Birthday"
     }
 ]
