@@ -6,7 +6,7 @@ type User {
   username: String
   password: String
   age: Int
-  memmory:[Memory]!
+  memory:[Memory]!
 }
 
 type Memory {
@@ -18,7 +18,6 @@ type Memory {
     comments: [Comment]!
   }
 
-  
   type Comment {
     _id: ID
     comment: String
