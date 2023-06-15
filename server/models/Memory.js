@@ -8,14 +8,11 @@ const memorySchema = new Schema(
             type: String,
 
         },
-        title: {
-            type: String,
-            required: true,
-            trim: true
-        },
-        img: {
-            type: String,
-        },
+        // title: {
+        //     type: String,
+        //     required: true,
+        //     trim: true
+        // },
         memory: {
             type: String,
             required: true,

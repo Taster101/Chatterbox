@@ -12,12 +12,12 @@ db.once('open', async () => {
   await User.create(userData);
 
   for (let i = 0; i < memoryData.length; i++) {
-    const { _id, thoughtAuthor } = await Memory.create(memoryData[i]);
+    const { _id, username } = await Memory.create(memoryData[i]);
     const user = await User.findOneAndUpdate(
-      { username: thoughtAuthor},
+      { username: username},
       {
         $addToSet: {
-          thoughts: _id,
+          memory: _id,
         },
       }
     );

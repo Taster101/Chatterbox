@@ -11,3 +11,12 @@ export const CREATE_USER = gql`
     }
   }
 `;
+
+export const ADD_MEMORY = gql `
+mutation addMemory($memory: String!) {
+  addMemory(memory: $memory) {
+    _id
+    memory
+  }
+}
+`;
