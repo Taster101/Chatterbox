@@ -11,7 +11,6 @@ type User {
 
 type Memory {
     _id: ID
-    title: String
     memory: String
     likes: Boolean
     tag: String
@@ -39,7 +38,7 @@ type Memory {
   type Mutation {
     addUser(username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    addMemory(title: String!, memory: String!): Memory
+    addMemory(memory: String!): Memory
     addComment(MemoryId: ID!, commentText: String!): Memory
     removeMemory(MemoryId: ID!): Memory
     removeComment(MemoryId: ID!, commentId: ID!): Memory
@@ -47,3 +46,5 @@ type Memory {
 `;
 
 module.exports = typeDefs;
+
+// add title?

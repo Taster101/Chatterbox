@@ -1,17 +1,14 @@
 [
    {
       "username": "Kevin",
-      "password": "jelly23",
-      "age": "13"
+      "password": "jelly23"
    },
    {
       "username": "corey",
-      "password": "Hope3",
-      "age": "23"
+      "password": "Hope3"
    },
    {
       "username": "Kevin",
-      "password": "Belly54",
-      "age": "45"
+      "password": "Belly54"
    }
 ]

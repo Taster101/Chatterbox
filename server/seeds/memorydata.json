@@ -1,19 +1,16 @@
 [
     {
-        "title": "Birthday",
         "img": "jelly23",
         "memory": "I my birthday today!",
         "likes": true,
         "tag": "#Birthday"
     },
     {
-        "title": "Biden awesome",
         "memory": "Biden is lower taxes!",
         "likes": true,
         "tag": "#Polotics"
     },
     {
-        "title": "First house",
         "memory": "i purchased my first house",
         "likes": true,
         "tag": "#Birthday"

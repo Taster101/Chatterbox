@@ -32,9 +32,10 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addMemory: async (parent, { title, memory }) => {
-            return Memory.create({ title, memory });
+        addMemory: async (parent, { memory }) => { 
+            return Memory.create({ memory });
           },
+          // add title?
     }
 };
 
