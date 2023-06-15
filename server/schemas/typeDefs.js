@@ -6,19 +6,18 @@ type User {
   username: String
   password: String
   age: Int
-  memmory:[Memory]!
+  memory:[Memory]!
 }
 
 type Memory {
     _id: ID
     title: String
     memory: String
-    likes: Int
+    likes: Boolean
     tag: String
     comments: [Comment]!
   }
 
-  
   type Comment {
     _id: ID
     comment: String

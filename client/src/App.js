@@ -1,8 +1,30 @@
-import Register from "./components/Register"
-
+import React from "react";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home"
+import Profile from "./pages/Profile"
+import Friends from "./pages/Friends"
+import Bookmarks from "./pages/Bookmarks"
+import Notifications from "./pages/Notifications"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+// import { NavigationCard } from "./components/NavigationCard"
 
 export default function App() {
   return (
-   <Register/>
+    <>
+      {/* <NavigationCard> */}
+        <Router>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='profile' element={<Profile />} />
+            <Route path='friends' element={<Friends />} />
+            <Route path='bookmarks' element={<Bookmarks />} />
+            <Route path='notifications' element={<Notifications />} />
+            <Route path='login' element={<Login />} />
+            <Route path='register' element={<Register />} />
+          </Routes>
+        </Router>
+      {/* </NavigationCard> */}
+    </>
   )
-}
+} 
