@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
-const  commentSchema  = require('./Comments')
+const commentSchema = require('./Comments')
 
 
-const memorySchema = new Schema (
-    { 
+const memorySchema = new Schema(
+    {
         userId: {
             type: String,
 
@@ -14,7 +14,7 @@ const memorySchema = new Schema (
             trim: true
         },
         img: {
-        type: String,
+            type: String,
         },
         memory: {
             type: String,
@@ -28,7 +28,7 @@ const memorySchema = new Schema (
 
         },
         likes: {
-            type: Number,
+            type: Boolean,
             default: 0,
 
         },
@@ -37,31 +37,31 @@ const memorySchema = new Schema (
 
         },
 
-        comments: [ 
+        comments: [
             {
-            comment: {
-            type: String,
-            required: true,
-            trim: true,
-            minlength: 1,
-            maxlength: 30,
-          
-          },
-          createdAt: {
-              type: Date,
-             default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-             get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
-      
-      
-          },
-          commentAuthur: {
-              type: String,
-              ref: `User`,
-              required: true,
-          }
+                comment: {
+                    type: String,
+                    required: true,
+                    trim: true,
+                    minlength: 1,
+                    maxlength: 30,
 
-        }
-    ]
+                },
+                createdAt: {
+                    type: Date,
+                    default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
+                    get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+
+
+                },
+                commentAuthur: {
+                    type: String,
+                    ref: `User`,
+                    required: true,
+                }
+
+            }
+        ]
 
     }
 );
