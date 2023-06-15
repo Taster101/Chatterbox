@@ -2,12 +2,11 @@ import { gql } from '@apollo/client';
 
 export const ALL_MEMORIES = gql`
 query allMemory {
-    memory {
-      _id
-      title
-      memory
-    }
+  memory {
+    _id
+    memory
   }
+}
 `;
 
 export const ALL_MEMORIES_BY_USER = gql`
@@ -17,7 +16,6 @@ query allMemoriesByUser {
       password
       memory {
         _id
-        title
         memory
       }
     }
