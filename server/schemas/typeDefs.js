@@ -25,9 +25,24 @@ type Memory {
     commentAuthor: String
     createdAt: String
   }
+
 type Query {
+
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Query {
+
     memory: [Memory]
     user: [User]
+  }
+
+  type Mutation {
+    addUser(username: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
   }
 `;
 
