@@ -32,7 +32,7 @@ type Memory {
   type Query {
 
     user: [User]!
-    memory: [Memory]
+    memopull origin mainry: [Memory]
     memoryTag(tag: String): [Memory]
     Memory(MemoryId: ID!): Memory
     me: User
