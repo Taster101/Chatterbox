@@ -31,8 +31,7 @@ const memorySchema = new Schema(
         },
         tag: [{
             type: String,
-        }
-        ]
+        }]
         ,
 
         comments: [

@@ -12,8 +12,9 @@ const resolvers = {
             return await User.find();
 
         },
-        memoryTag: async (TagSearch) => {
-            return await Memory.find({tag:TagSearch})
+        memoryTag: async (parent,{tag}) => {
+            console.log(tag)
+            return await Memory.find({tag:tag})
         }
     },
 
