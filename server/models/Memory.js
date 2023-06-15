@@ -29,10 +29,10 @@ const memorySchema = new Schema(
             default: 0,
 
         },
-        tag: {
+        tag: [{
             type: String,
-
-        },
+        }]
+        ,
 
         comments: [
             {

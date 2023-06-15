@@ -10,7 +10,12 @@ const resolvers = {
         },
         user: async () => {
             return await User.find();
+
         },
+        memoryTag: async (parent,{tag}) => {
+            console.log(tag)
+            return await Memory.find({tag:tag})
+        }
     },
 
 
