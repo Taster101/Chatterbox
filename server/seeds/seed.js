@@ -5,10 +5,28 @@ const userData = require('./user.json');
 
 
 db.once('open', async () => {
+  try {
   await Memory.deleteMany({});
   await Memory.create(memoryData);
   await User.deleteMany({});
   await User.create(userData);
+
+  for (let i = 0; i < memoryData.length; i++) {
+    const { _id, thoughtAuthor } = await Memory.create(memoryData[i]);
+    const user = await User.findOneAndUpdate(
+      { username: thoughtAuthor},
+      {
+        $addToSet: {
+          thoughts: _id,
+        },
+      }
+    );
+  }
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
+  
   console.log('completed!');
   process.exit(0);
 });

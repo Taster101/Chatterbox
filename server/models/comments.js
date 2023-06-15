@@ -7,13 +7,12 @@ const commentSchema = new Schema(
       required: true,
       trim: true,
       maxlength: 30,
-    
+
     },
     createdAt: {
-        type: Date,
-       default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-       get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
-
+      type: Date,
+      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
+      get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
 
     },
     commentAuthur: {
@@ -21,7 +20,7 @@ const commentSchema = new Schema(
         ref: `User`
     }
 
-    },
+  },
   {
     toJSON: {
       virtuals: true,
@@ -29,7 +28,6 @@ const commentSchema = new Schema(
     id: false,
   }
 );
-
 
 
 module.exports = commentSchema;
