@@ -31,9 +31,10 @@ type Memory {
   }
 
   type Query {
-    user: [User]
+
+    user: [User]!
     memory: [Memory]
-    Memory(username: String): [Memory]
+    memoryTag(tag: String): [Memory]
     Memory(MemoryId: ID!): Memory
     me: User
   }
