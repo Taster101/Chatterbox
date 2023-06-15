@@ -39,16 +39,11 @@ type Memory {
   type Mutation {
     addUser(username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    addMemory(memoryText: String!): Memory
-    addComment(thoughtId: ID!, commentText: String!): Memory
-    removeMemory(thoughtId: ID!): Memory
-    removeComment(thoughtId: ID!, commentId: ID!): Memory
+    addMemory(title: String!, memory: String!): Memory
+    addComment(MemoryId: ID!, commentText: String!): Memory
+    removeMemory(MemoryId: ID!): Memory
+    removeComment(MemoryId: ID!, commentId: ID!): Memory
   }
-`
-
-  
-
-;
-
+`;
 
 module.exports = typeDefs;
