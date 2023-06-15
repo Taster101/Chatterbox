@@ -7,12 +7,19 @@ import Bookmarks from "./pages/Bookmarks"
 import Notifications from "./pages/Notifications"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 // import { NavigationCard } from "./components/NavigationCard"
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 export default function App() {
   return (
     <>
       {/* <NavigationCard> */}
+      <ApolloProvider client={client}>
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -25,6 +32,7 @@ export default function App() {
           </Routes>
         </Router>
       {/* </NavigationCard> */}
+      </ApolloProvider>
     </>
   )
 } 
