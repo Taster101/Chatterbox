@@ -29,6 +29,7 @@ const memorySchema = new Schema (
         },
         likes: {
             type: Number,
+            default: 0,
 
         },
         tag: {
@@ -36,7 +37,31 @@ const memorySchema = new Schema (
 
         },
 
-        Comments: [commentSchema]
+        comments: [ 
+            {
+            comment: {
+            type: String,
+            required: true,
+            trim: true,
+            minlength: 1,
+            maxlength: 30,
+          
+          },
+          createdAt: {
+              type: Date,
+             default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
+             get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+      
+      
+          },
+          commentAuthur: {
+              type: String,
+              ref: `User`,
+              required: true,
+          }
+
+        }
+    ]
 
     }
 );

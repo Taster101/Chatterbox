@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const commentSchema = new Schema(
   {
-    commets: {
+    commet: {
       type: String,
       required: true,
       trim: true,
@@ -15,9 +15,9 @@ const commentSchema = new Schema(
       get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
 
     },
-    user: {
-      type: String,
-      ref: `User`
+    commentAuthur: {
+        type: String,
+        ref: `User`
     }
 
   },
