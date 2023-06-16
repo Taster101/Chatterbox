@@ -30,6 +30,7 @@ query getAllUsers {
     }
   }
 `;
+
 export const TAG_SEARCH = gql`
 query MemoryTag($tag: String) {
   memoryTag(tag: $tag) {

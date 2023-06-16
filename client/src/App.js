@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import Friends from "./pages/Friends"
@@ -7,7 +9,7 @@ import Bookmarks from "./pages/Bookmarks"
 import Notifications from "./pages/Notifications"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 // import { NavigationCard } from "./components/NavigationCard"
 
 const client = new ApolloClient({
