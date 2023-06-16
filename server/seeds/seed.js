@@ -7,7 +7,6 @@ const userData = require('./user.json');
 db.once('open', async () => {
   try {
   await Memory.deleteMany({});
-  await Memory.create(memoryData);
   await User.deleteMany({});
   await User.create(userData);
 
