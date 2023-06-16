@@ -1,5 +1,5 @@
 const Memory = require('./Memory');
-const User = require('./User');
+const User = require('./user');
 
  
 
