@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comments')
+
 
 
 const memorySchema = new Schema(
