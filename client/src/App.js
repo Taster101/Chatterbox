@@ -1,5 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
 import Friends from "./pages/Friends"
@@ -7,12 +9,19 @@ import Bookmarks from "./pages/Bookmarks"
 import Notifications from "./pages/Notifications"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+
 // import { NavigationCard } from "./components/NavigationCard"
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 export default function App() {
   return (
     <>
       {/* <NavigationCard> */}
+      <ApolloProvider client={client}>
         <Router>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -25,6 +34,7 @@ export default function App() {
           </Routes>
         </Router>
       {/* </NavigationCard> */}
+      </ApolloProvider>
     </>
   )
 } 
