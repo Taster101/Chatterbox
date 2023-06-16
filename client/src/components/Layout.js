@@ -2,7 +2,7 @@ import NavigationCard from "../components/NavigationCard";
 import Search from "../components/Search"
 import TagCard from "./TagCard"
 
-export default function Layout({children,hideNavigation}) {
+export default function Layout({children,hideNavigation,setTagSearch}) {
 
   let centerColumn = '';
  if (hideNavigation) {
@@ -28,7 +28,7 @@ export default function Layout({children,hideNavigation}) {
 
           <div className="hidden md:block w-3/12">
             <Search/>
-            <TagCard/>
+            <TagCard setTagSearch = {setTagSearch}/>
           </div>
 
       </div>
