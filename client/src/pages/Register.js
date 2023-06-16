@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -18,7 +19,11 @@ export default function Login() {
                     <input value={username} onChange={ev => setUsername(ev.target.value)} type="text" placeholder="username" className="block w-full rounded-sm p-2 mb-2 border" />
                     <input value={password} onChange={ev => setPassword(ev.target.value)}type="text" placeholder="password" className="block w-full rounded-sm p-2 mb-2 border" />   
                     <button className="bg-blue-500 text-white block w-full rounded-sm p-2"> Register </button>
-            
+                    <Link to="/login">
+                        <div className="mt-2">
+                            <button className="bg-blue-500 text-white block w-full rounded-sm p-2"> Login </button>
+                        </div>
+                    </Link>
                 </form>    
             </div>
 
