@@ -19,9 +19,9 @@ export default function TagCard(props) {
             <li><a onClick={(e) => props.setTagSearch(e.target.outerText)}>#Music</a> </li>  
             <li><a onClick={(e) => props.setTagSearch(e.target.outerText)}>#News </a></li> 
             <li><a onClick={(e) => props.setTagSearch(e.target.outerText)}>#Entertainment </a></li> 
-            <li><a onClick={(e) => props.setTagSearch(e.target.outerText)}>#random </a></li> 
+            <li><a onClick={(e) => props.setTagSearch(e.target.outerText)}>#Random </a></li> 
             <li><a onClick={(e) => props.setTagSearch(e.target.outerText)}>#Funny </a></li> 
-            
+
             </ul>
             
             </Card>
