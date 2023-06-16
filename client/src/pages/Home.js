@@ -3,18 +3,22 @@ import PostFormCard from "../components/PostFormCard";
 import PostCard from "../components/PostCard";
 import Layout from "../components/Layout";
 import { ALL_MEMORIES , TAG_SEARCH } from '../utils/queries';
+import { useState } from 'react';
 
 
 // import Login from "./Login";
 
 const Home = () => {
+  const [tagSearch , setTagSearch]  = useState()
   const { loading, data } = useQuery(ALL_MEMORIES);
-  const {loader, datas } = useQuery(TAG_SEARCH);
+  const {loader, datas } = useQuery(TAG_SEARCH, {variables:{tag:tagSearch}});
   const memories = data?.memory || [];
   // const session = useSession();
+  const tags = datas?.tag || []
+console.log(tags)
   return (
     <>
-     <Layout>
+     <Layout setTagSearch = {setTagSearch}   >
             <PostFormCard
             />
             <PostCard
