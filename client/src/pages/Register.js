@@ -1,18 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-const Register = () => {
-    const [formState, setFormState] = useState({
-        username: '',
-        email: '',
-        password: '',
-    });
+const Register = (props) => {
+    const [formState, setFormState] = useState({ username: '', password: '' });
     const [createUser, { error, data }] = useMutation(CREATE_USER);
 
     const handleChange = (event) => {
@@ -26,7 +22,6 @@ const Register = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.Log(formState);
 
         try {
             const { data } = await createUser({
@@ -41,18 +36,21 @@ const Register = () => {
     return(
        
         <div className="bg-blue-50 h-screen flex justify-center items-center">
-            <form className="w-72 mx-auto mb-12">
+           {data ? (
+              <p> Success! You may now head back to the {' '} <Link to="/">HOMEPAGE.</Link> </p>
+            ) : (  
+            <form onSubmit={handleFormSubmit} className="w-72 mx-auto mb-12">
             <h1 className="text-6xl mb-4 text-gray-300"> Register</h1>
-                <input value={email} onChange={ev => setEmail(ev.target.value)}type="text" placeholder="email" className="block w-full rounded-sm p-2 mb-2 border" />  
-                <input value={username} onChange={ev => setUsername(ev.target.value)} type="text" placeholder="username" className="block w-full rounded-sm p-2 mb-2 border" />
-                <input value={password} onChange={ev => setPassword(ev.target.value)}type="text" placeholder="password" className="block w-full rounded-sm p-2 mb-2 border" />   
-                <button className="bg-blue-500 text-white block w-full rounded-sm p-2"> Register </button>
+                <input value={formState.name} onChange={handleChange} name="username" type="text" placeholder="username" className="block w-full rounded-sm p-2 mb-2 border" />
+                <input value={formState.password} onChange={handleChange} name="password" type="text" placeholder="password" className="block w-full rounded-sm p-2 mb-2 border" /> 
+                <button className="bg-blue-500 text-white block w-full rounded-sm p-2" type="Submit"> Register </button>
                 <Link to="/login">
                     <div className="mt-2">
                         <button className="bg-blue-500 text-white block w-full rounded-sm p-2"> Login </button>
                     </div>
                 </Link>
-            </form>    
+            </form>   
+            )}
         </div>
 
     );
