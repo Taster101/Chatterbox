@@ -23,12 +23,12 @@ class AuthService {
         return localStorage.getItem('id_token');
     }
 
-    Login(idkToken) {
+    login(idkToken) {
         localStorage.setItem('id_token', idkToken);
         window.location.assign('/');
     }
 
-    Logout() {
+    logout() {
         localStorage.removeItem('id_token');
         window.location.reload();
     }

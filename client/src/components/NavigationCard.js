@@ -9,7 +9,7 @@ const nonactiveElement = 'text-sm md:text-md flex gap-1 md:gap-3 py-3 -mx-4 px-4
 const NavigationCard = () => {
     const Logout = (event) => {
         event.preventDefault();
-        Auth.Logout();
+        Auth.logout();
     };
 
     return (
@@ -56,7 +56,7 @@ const NavigationCard = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                             </svg>
-                            <span>Hi!, {Auth.getProfile().data.username}!</span>
+                            <span className="hidden md:block"> Hi!, {Auth.getProfile().data.username}!</span>
                             <button className="btn btn-lg btn-light m-2" onClick={Logout}>
                                 Logout
                             </button>
@@ -67,7 +67,7 @@ const NavigationCard = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                             </svg>
-                            <span className="hidden md:block"> Log in/Sign Up </span>
+                            <span className="hidden md:block"> Log in or Sign Up </span>
                         </NavLink>
                     )}
                 </div>

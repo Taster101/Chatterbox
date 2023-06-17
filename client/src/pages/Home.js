@@ -6,8 +6,6 @@ import { ALL_MEMORIES , TAG_SEARCH } from '../utils/queries';
 import { useState } from 'react';
 
 
-// import Login from "./Login";
-
 const Home = () => {
   const [tagSearch , setTagSearch]  = useState()
   const { loading, data } = useQuery(ALL_MEMORIES);
