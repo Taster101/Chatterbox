@@ -9,6 +9,8 @@ import Bookmarks from "./pages/Bookmarks"
 import Notifications from "./pages/Notifications"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import Comments from "./pages/Comments";
+import Likes from "./pages/Likes"
 
 // import { NavigationCard } from "./components/NavigationCard"
 
@@ -31,6 +33,8 @@ export default function App() {
             <Route path='notifications' element={<Notifications />} />
             <Route path='login' element={<Login />} />
             <Route path='register' element={<Register />} />
+            <Route path='profile/comments' element={<Comments />} />
+            <Route path='profile/likes' element={<Likes />} />
           </Routes>
         </Router>
       {/* </NavigationCard> */}

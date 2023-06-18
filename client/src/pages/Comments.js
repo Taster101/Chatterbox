@@ -2,13 +2,9 @@ import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Avatar from "../components/Avatar"
 import { Link, useLocation } from "react-router-dom";
-import PostCard from "../components/PostCard";
-import { Router } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 
-export default function Profile() {
-    const router = { Router };
-    //const { Router } = "router";
+
+export default function Comments() {
     const {pathname} = useLocation();
     const getPosts = pathname.includes("posts") || pathname === "/profile";
     const getComments = pathname.includes("comments");
@@ -35,20 +31,19 @@ export default function Profile() {
                         <div className="text-gray-500 leading-5">Atlanta, Ga</div>
                     </div>
                     <div className="mt-8 flex justify-around" >
-                        <NavLink to="/profile" className={getPosts ? selectedTab : unselectedTab}>
+                        <Link to="/profile"  className={getPosts ? selectedTab : unselectedTab}>
                             Posts
-                        </NavLink>
-                        <NavLink to="/profile/comments" className={getComments ? selectedTab : unselectedTab}>
+                        </Link>
+                        <Link to="/profile/comments"  className={getComments ? selectedTab : unselectedTab}>
                             Comments
-                        </NavLink>
-                        <NavLink to={"/profile/likes"} className={getLikes ? selectedTab : unselectedTab}>
+                        </Link>
+                        <Link to="/profile/likes"  className={getLikes ? selectedTab : unselectedTab}>
                             Likes
-                        </NavLink>    
+                        </Link>    
                     </div>
                 </div>
             </div>
             </Card>
-            <PostCard />
         </Layout>
     )
 }
