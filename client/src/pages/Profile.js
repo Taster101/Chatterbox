@@ -1,21 +1,26 @@
+import { useQuery } from '@apollo/client';
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Avatar from "../components/Avatar"
 import { Link, useLocation } from "react-router-dom";
-import PostCard from "../components/PostCard";
+import ProfilePC from "../components/ProfilePC";
 import { Router } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { ALL_MEMORIES } from '../utils/queries';
 
-export default function Profile() {
-    const router = { Router };
-    //const { Router } = "router";
-    const {pathname} = useLocation();
-    const getPosts = pathname.includes("posts") || pathname === "/profile";
-    const getComments = pathname.includes("comments");
-    const getLikes = pathname.includes("likes");
-    const selectedTab = "border-accentBlue text-accentBlue border-b-4 px-5 py-2 font-bold";
-    const unselectedTab = "flex items-center";
 
+const Profile = () => {
+
+const router = { Router };
+const {pathname} = useLocation();
+const getPosts = pathname.includes("posts") || pathname === "/profile";
+const getComments = pathname.includes("comments");
+const getLikes = pathname.includes("likes");
+const selectedTab = "border-accentBlue text-accentBlue border-b-4 px-5 py-2 font-bold";
+const unselectedTab = "flex items-center";
+const { loading, data } = useQuery(ALL_MEMORIES);
+const memories = data?.memory || [];
+   
     return(
         <Layout>
             <Card noPadding={true}> 
@@ -48,7 +53,18 @@ export default function Profile() {
                 </div>
             </div>
             </Card>
-            <PostCard />
+           {memories && (
+                    memories.map((memory) => (
+                      <ProfilePC
+                      memories={memory}
+                      title="Recent Memories"/>
+                    ))
+                )}
+            <ProfilePC
+              memories={memories}
+              title="Recent Memories"/>
         </Layout>
     )
 }
+
+export default Profile;

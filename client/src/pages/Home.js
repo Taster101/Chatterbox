@@ -11,7 +11,6 @@ const Home = () => {
   const { loading, data } = useQuery(ALL_MEMORIES);
   const {loader, datas } = useQuery(TAG_SEARCH, {variables:{tag:tagSearch}});
   const memories = data?.memory || [];
-  // const session = useSession();
   const tags = datas?.tag || []
 console.log(tags)
   return (
