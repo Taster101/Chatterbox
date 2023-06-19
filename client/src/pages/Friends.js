@@ -18,7 +18,7 @@ export default function Friends() {
                             <div className="absolute top-14 left-3">
                                 <Avatar size={'big'} />
                             </div>
-                            <div className="p-2 pb-14">
+                            <div className="p-0 pb-14 mt-4">
                                 <div className="ml-36">
                                     <h1 className="text-2xl font-bold leading-5">
                                     {Auth.getProfile().data.username}
