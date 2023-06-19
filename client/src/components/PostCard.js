@@ -1,7 +1,7 @@
 import Card from "./Card";
 import Avatar from "./Avatar";
 import { Link } from "react-router-dom";
-
+import Auth from '../utils/auth';
 
 const PostCard = ({ memories }) => {
     console.log(memories)
@@ -22,11 +22,21 @@ const PostCard = ({ memories }) => {
                 <div className="grow">
                     <div>
                         <p>
-                            <Link to={'Profile'}>
-                                <span className="font-semibold cursor-pointer text-accentBlue hover:underline">
-                                   Jane Doe
-                                </span>
-                            </Link>
+                        {Auth.loggedIn() ? (
+                                <>
+                                    <Link to={'Profile'}>
+                                        <span className="font-semibold cursor-pointer text-accentBlue hover:underline">
+                                            {Auth.getProfile().data.username}
+                                        </span>
+                                    </Link>
+                                </>
+                            ) : (
+                                <Link to={'Profile'}>
+                                        <span className="font-semibold cursor-pointer text-accentBlue hover:underline">
+                                            {Auth.getProfile().data.username}
+                                        </span>
+                                </Link>
+                            )}
                         </p>
                         <p className="text-gray-500 text-sm"> {memories.createdAt}</p>
                     </div>
