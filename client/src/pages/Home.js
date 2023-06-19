@@ -19,6 +19,13 @@ console.log(tags)
      <Layout setTagSearch = {setTagSearch}   >
             <PostFormCard
             />
+           {memories && (
+                    memories.map((memory) => (
+                      <PostCard
+                      memories={memory}
+                      title="Recent Memories"/>
+                    ))
+                )}
             <PostCard
               memories={memories}
               title="Recent Memories"/>

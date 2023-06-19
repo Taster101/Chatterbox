@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const PostCard = ({ memories }) => {
+    console.log(memories)
     if (!memories) {
         return <h3>No Posts Yet</h3>;
     }
@@ -31,20 +32,20 @@ const PostCard = ({ memories }) => {
                     </div>
                 </div>
             </div>
-            <div>
-                {memories && (
-                    memories.map((memory) => (
-                        <div key={memory._id}>
+            
+                
+                    
+                        <div key={memories._id}>
                             <p className="my-2 text-sm">
-                                {memory.memory}
+                                {memories.memory}
                             </p>
                             <div className="rounded-lg overflow-hidden">
                               {/* <img src="https://wearehairgoals.files.wordpress.com/2021/03/20210319_1843158331497074179050062.jpg" alt="" /> */}
                           </div>
                         </div>
-                    ))
-                )}
-            </div>
+                    
+                
+            
             <div className="mt-5 flex gap-7">
               <button className="flex gap-2 items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
