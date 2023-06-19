@@ -24,28 +24,21 @@ const PostCard = ({ memories }) => {
                         <p>
                             <Link to={'Profile'}>
                                 <span className="font-semibold cursor-pointer text-accentBlue hover:underline">
-                                    Jane Doe
+                                   Jane Doe
                                 </span>
                             </Link>
                         </p>
-                        <p className="text-gray-500 text-sm">1 minute ago</p>
+                        <p className="text-gray-500 text-sm"> {memories.createdAt}</p>
                     </div>
                 </div>
             </div>
-            
-                
-                    
                         <div key={memories._id}>
                             <p className="my-2 text-sm">
                                 {memories.memory}
                             </p>
                             <div className="rounded-lg overflow-hidden">
-                              {/* <img src="https://wearehairgoals.files.wordpress.com/2021/03/20210319_1843158331497074179050062.jpg" alt="" /> */}
                           </div>
                         </div>
-                    
-                
-            
             <div className="mt-5 flex gap-7">
               <button className="flex gap-2 items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

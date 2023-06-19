@@ -5,6 +5,7 @@ query allMemory {
   memory {
     _id
     memory
+    createdAt
   }
 }
 `;
@@ -17,6 +18,7 @@ query allMemoriesByUser {
       memory {
         _id
         memory
+        createdAt
       }
     }
   }

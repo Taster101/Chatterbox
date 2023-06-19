@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-
+const dateFormat = require('../utils/dateFormat');
 
 
 const memorySchema = new Schema(
@@ -8,11 +8,6 @@ const memorySchema = new Schema(
             type: String,
 
         },
-        // title: {
-        //     type: String,
-        //     required: true,
-        //     trim: true
-        // },
         memory: {
             type: String,
             required: true,
@@ -20,8 +15,8 @@ const memorySchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-            get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+            default: Date.now,
+            get: (timestamp) => dateFormat(timestamp)
 
         },
         likes: {
@@ -31,9 +26,7 @@ const memorySchema = new Schema(
         },
         tag: [{
             type: String,
-        }]
-        ,
-
+        }],
         comments: [
             {
                 comment: {
@@ -46,10 +39,8 @@ const memorySchema = new Schema(
                 },
                 createdAt: {
                     type: Date,
-                    default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-                    get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
-
-
+                    default: Date.now,
+                    get: (timestamp) => dateFormat(timestamp)
                 },
                 commentAuthur: {
                     type: String,

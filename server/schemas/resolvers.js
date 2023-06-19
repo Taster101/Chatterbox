@@ -6,7 +6,7 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         memory: async () => {
-            return await Memory.find();
+            return Memory.find().sort({ createdAt: -1 });
         },
         user: async () => {
             return await User.find();

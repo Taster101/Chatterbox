@@ -13,6 +13,7 @@ type Memory {
     _id: ID
     memory: String
     likes: Boolean
+    createdAt: String
     tag: String
     comments: [Comment]!
   }
@@ -29,7 +30,6 @@ type Memory {
   }
 
   type Query {
-
     user: [User]!
     memory: [Memory]
     memoryTag(tag: String): [Memory]
