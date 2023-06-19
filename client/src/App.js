@@ -26,12 +26,12 @@ export default function App() {
       <ApolloProvider client={client}>
         <Router>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
             <Route path='profile' element={<Profile />} />
             <Route path='friends' element={<Friends />} />
             <Route path='bookmarks' element={<Bookmarks />} />
             <Route path='notifications' element={<Notifications />} />
-            <Route path='login' element={<Login />} />
+            <Route path='/' element={<Login />} />
             <Route path='register' element={<Register />} />
             <Route path='profile/comments' element={<Comments />} />
             <Route path='profile/likes' element={<Likes />} />
