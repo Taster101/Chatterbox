@@ -7,9 +7,8 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ username: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);    //Why is { error, data } not working? 
+    const [login, { error, data }] = useMutation(LOGIN_USER);   
 
-    // Update state based on from input changes
     const handleChange = (event) => {  
         const { name, value } = event.target;
 
@@ -19,10 +18,10 @@ const Login = (props) => {
         });
     };
 
-    // submit form
     const handleFormSubmit = async (event) => {  
         event.preventDefault();
         console.log(formState);
+
         try {
             const { data } = await login({
                 variables: { ...formState },
@@ -33,14 +32,21 @@ const Login = (props) => {
             console.error(e);
         }
 
-        // clear form values
         setFormState({
             username: '',
             password: '',
         });
     };
+
+
     return(
         <>
+                 {error && (
+                <div className="bg-blue-500 text-white block w-full rounded-sm p-2">
+                    {error.message}
+                    </div>
+            )}
+ 
          <div className="bg-blue-50 h-screen flex justify-center items-center">
           {data ? (
               <p> Success! You may now head back to the {' '} <Link to="/">HOMEPAGE.</Link> </p>
@@ -58,7 +64,7 @@ const Login = (props) => {
              </form>  
             )} 
          </div>
- 
+
       </>
      );
 };
