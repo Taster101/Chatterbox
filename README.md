@@ -24,7 +24,7 @@ Our app utilizes advanced technologies like JavaScript, MERN Stack (MongoDB, Exp
 
 
 ## Dependencies
-All required packages are listed in the included package.json file. Simply run "npm install" in the terminal to install all of the required packages.
+All required packages are listed in the included package.json file. On the root level, Simply run "npm install" in the terminal to install all of the required packages.
 
 ## Contributors
 - [Tim Dolan](https://github.com/timdolan14)
