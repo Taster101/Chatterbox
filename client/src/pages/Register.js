@@ -31,6 +31,12 @@ const Register = (props) => {
     };
 
     return (
+        <>
+        {error && (
+            <div className="bg-blue-500 text-white block w-full rounded-sm p-2">
+                {error.message}
+                </div>
+        )}
         <div className="bg-blue-50 h-screen flex justify-center items-center">
             {data ? (
                 <p> Success! You may now head back to the {' '} <Link to="/home">HOMEPAGE.</Link> </p>
@@ -48,7 +54,7 @@ const Register = (props) => {
                 </form>
             )}
         </div>
-
+        </>
     );
 };
 
