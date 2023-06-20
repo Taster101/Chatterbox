@@ -13,6 +13,7 @@ const Home = () => {
   const memories = data?.memory || [];
   const tags = datas?.tag || []
   console.log(tags)
+  
   return (
     <>
       <Layout setTagSearch={setTagSearch}   >
