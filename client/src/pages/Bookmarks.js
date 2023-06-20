@@ -6,7 +6,6 @@ export default function Bookmarks() {
         <Layout>
             <h1 className="text-6xl mb-4 text-gray-300"> Saved posts</h1>
             <PostCard/>
-            <PostCard/>
         </Layout>
     )
 }
