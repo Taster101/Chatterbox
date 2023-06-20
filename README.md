@@ -1,9 +1,9 @@
 # Chatterbox
 
 ## Deployed Site
-https://duck-wrist-cat-8cf5ac6915ff.herokuapp.com
+https://duck-wrist-cat-8cf5ac6915ff.herokuapp.com/register
 
-## Github repo
+## Github Repo
 https://github.com/Taster101/Chatterbox
 
 ## Description

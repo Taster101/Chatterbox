@@ -12,7 +12,6 @@ const Register = (props) => {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-
         setFormState({
             ...formState,
             [name]: value,
@@ -21,7 +20,6 @@ const Register = (props) => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
         try {
             const { data } = await createUser({
                 variables: { ...formState },
