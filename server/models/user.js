@@ -15,6 +15,7 @@ const userSchema = new Schema(
       unique: true,
       minlength: 2,
     },
+
     memory: [{
       type: Schema.Types.ObjectId,
       ref: `memory`,

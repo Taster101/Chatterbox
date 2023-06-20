@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
   {
@@ -11,8 +12,8 @@ const commentSchema = new Schema(
     },
     createdAt: {
       type: Date,
-      default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
-      get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp)
 
     },
     commentAuthur: {
@@ -27,6 +28,5 @@ const commentSchema = new Schema(
     id: false,
   }
 );
-
 
 module.exports = commentSchema;

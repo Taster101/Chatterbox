@@ -79,11 +79,11 @@ export default function Friends() {
                         <p className="flex">
                             <Link to={'Profile'}>
                                 <span className="mr-1 font-semibold cursor-pointer text-accentBlue hover:underline"> 
-                                    Jane Doe 
+                                    John Smalls 
                                 </span>
                             </Link>
                         </p>
-                        <p className="text-gray-500 text-sm">5 mutual friends</p>
+                        <p className="text-gray-500 text-sm">2 mutual friends</p>
                     </div>
                 </div>
             </Card>
