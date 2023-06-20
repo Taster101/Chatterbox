@@ -63,8 +63,6 @@ export default function Notifications() {
                     </div>
                 </div>
             </Card>
-
-            
         </Layout>
     )
 }
