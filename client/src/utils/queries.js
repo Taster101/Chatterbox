@@ -28,6 +28,7 @@ export const ALL_USERS = gql`
 query getAllUsers {
     user {
       username
+      email
       _id
     }
   }
