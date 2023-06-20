@@ -13,7 +13,6 @@ const resolvers = {
 
         },
         memoryTag: async (parent,args) => {
-            console.log(args)
             return await Memory.find({tag:tag})
         }
     },
