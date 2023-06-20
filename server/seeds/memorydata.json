@@ -1,9 +1,17 @@
 [
     {
-        "img": "jelly23",
-        "memory": "Today",
-        "likes": true,
-        "tag": "#Birthday"
+        "memory": "Played Golf Yesterday! Really enjoyed it!"
+    },
+    {
+        "memory": "Florida was Fun!"
+    },
+    {
+        "memory": "Rained Yesterday! Not fun!"
+    },
+    {
+        "memory": "I love to post my memories!"
+    },
+    {
+        "memory": "What is up Chatterbox!"
     }
-
 ]

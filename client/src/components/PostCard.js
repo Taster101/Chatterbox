@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 import Auth from '../utils/auth';
 
 const PostCard = ({ memories }) => {
-    console.log(memories)
     if (!memories) {
         return <h3>No Posts Yet</h3>;
     }
-
     return (
         <Card>
             <div className="flex gap-3">

@@ -21,15 +21,6 @@ const PostFormCard = () => {
                 });
             } catch (e) {
                 console.error(e);
-                const queryResult = cache.readQuery({ query: ALL_MEMORIES });
-                // console.log(queryResult);
-                // console.log(typeof queryResult)
-                // console.log( queryResult.memory); //Array
-
-                // const { memory : chicken } = cache.readQuery({ query: ALL_MEMORIES });
-                // console.log(chicken);
-
-                // const { memory } = queryResult;
             }
         },
     });

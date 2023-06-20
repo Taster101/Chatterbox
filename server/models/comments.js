@@ -16,10 +16,9 @@ const commentSchema = new Schema(
 
     },
     commentAuthur: {
-        type: String,
-        ref: `User`
+      type: String,
+      ref: `User`
     }
-
   },
   {
     toJSON: {

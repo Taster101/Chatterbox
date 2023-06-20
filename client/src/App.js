@@ -12,8 +12,6 @@ import Register from "./pages/Register"
 import Comments from "./pages/Comments";
 import Likes from "./pages/Likes"
 
-// import { NavigationCard } from "./components/NavigationCard"
-
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
@@ -22,7 +20,6 @@ const client = new ApolloClient({
 export default function App() {
   return (
     <>
-      {/* <NavigationCard> */}
       <ApolloProvider client={client}>
         <Router>
           <Routes>
@@ -37,7 +34,6 @@ export default function App() {
             <Route path='profile/likes' element={<Likes />} />
           </Routes>
         </Router>
-      {/* </NavigationCard> */}
       </ApolloProvider>
     </>
   )
