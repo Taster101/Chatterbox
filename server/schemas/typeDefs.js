@@ -5,6 +5,7 @@ type User {
   _id: ID
   username: String
   password: String
+  email: String
   memory:[Memory]!
 }
 
@@ -38,7 +39,7 @@ type Memory {
   }
 
   type Mutation {
-    addUser(username: String!, password: String!): Auth
+    addUser(email: String! username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
     addMemory(memory: String!): Memory
     addComment(MemoryId: ID!, commentText: String!): Memory
