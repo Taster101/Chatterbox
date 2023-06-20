@@ -33,7 +33,6 @@ const Register = (props) => {
     };
 
     return (
-
         <div className="bg-blue-50 h-screen flex justify-center items-center">
             {data ? (
                 <p> Success! You may now head back to the {' '} <Link to="/home">HOMEPAGE.</Link> </p>
