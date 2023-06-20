@@ -18,9 +18,9 @@ export default function Notifications() {
                         <p className="flex">
                             <Link to={'Profile'}>
                                 <span className="mr-1 font-semibold cursor-pointer text-accentBlue hover:underline"> 
-                                    Jane Doe 
+                                    John Smalls
                                 </span>
-                            liked your photo
+                            liked your post
                             </Link>
                         </p>
                         <p className="text-gray-500 text-sm">1 minute ago</p>
@@ -38,7 +38,7 @@ export default function Notifications() {
                                 <span className="mr-1 font-semibold cursor-pointer text-accentBlue hover:underline"> 
                                     Jane Doe 
                                 </span>
-                            liked your photo
+                            liked your post
                             </Link>
                         </p>
                         <p className="text-gray-500 text-sm">1 minute ago</p>

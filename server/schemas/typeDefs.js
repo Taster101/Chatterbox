@@ -5,7 +5,6 @@ type User {
   _id: ID
   username: String
   password: String
-  age: Int
   memory:[Memory]!
 }
 
@@ -24,6 +23,7 @@ type Memory {
     commentAuthor: String
     createdAt: String
   }
+  
   type Auth {
     token: ID!
     user: User
@@ -48,5 +48,3 @@ type Memory {
 `;
 
 module.exports = typeDefs;
-
-// add title?

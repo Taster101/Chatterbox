@@ -2,16 +2,13 @@ import { useQuery } from '@apollo/client';
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Avatar from "../components/Avatar"
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import ProfilePC from "../components/ProfilePC";
-import { Router } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import { ALL_MEMORIES } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Profile = () => {
 
-const router = { Router };
 const {pathname} = useLocation();
 const getPosts = pathname.includes("posts") || pathname === "/profile";
 const getComments = pathname.includes("comments");

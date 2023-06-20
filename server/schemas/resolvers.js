@@ -12,8 +12,8 @@ const resolvers = {
             return await User.find();
 
         },
-        memoryTag: async (parent,args) => {
-            return await Memory.find({tag:tag})
+        memoryTag: async (parent, args) => {
+            return await Memory.find({ tag: tag })
         }
     },
 
@@ -36,10 +36,9 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        addMemory: async (parent, { memory }) => { 
+        addMemory: async (parent, { memory }) => {
             return Memory.create({ memory });
-          },
-          // add title?
+        },
     }
 };
 

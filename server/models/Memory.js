@@ -5,24 +5,26 @@ const memorySchema = new Schema(
     {
         userId: {
             type: String,
-
         },
+
         memory: {
             type: String,
             required: true,
             trim: true
         },
+
         createdAt: {
             type: Date,
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
-
         },
+
         likes: {
             type: Boolean,
             default: 0,
 
         },
+        
         tag: [{
             type: String,
         }],
